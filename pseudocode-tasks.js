@@ -20,7 +20,7 @@ const fixStart = (word) => {
             newWord += letter;
         }
     }
-    return newWord
+    return newWord;
 }
 
 console.log(fixStart('babble'));
