@@ -17,3 +17,6 @@
 myFavouriteFoods = ['Pizza', 'Chips', 'Broccoli', 'Bananas'];
 console.log(myFavouriteFoods[0]); // Print first item
 console.log(myFavouriteFoods[2]); // Print third item
+
+randomNumber = Math.floor(Math.random() * myFavouriteFoods.length);
+console.log(myFavouriteFoods[randomNumber]);
