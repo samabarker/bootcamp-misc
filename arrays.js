@@ -15,8 +15,11 @@
 // TASKS
 // ---------------------------------------------------------------------------------------
 myFavouriteFoods = ['Pizza', 'Chips', 'Broccoli', 'Bananas'];
-console.log(myFavouriteFoods[0]); // Print first item
-console.log(myFavouriteFoods[2]); // Print third item
+// console.log(myFavouriteFoods[0]); // Print first item
+// console.log(myFavouriteFoods[2]); // Print third item
+// randomNumber = Math.floor(Math.random() * myFavouriteFoods.length); // Find random number between 0 and array length
+// console.log(myFavouriteFoods[randomNumber]); // Print random item
 
-randomNumber = Math.floor(Math.random() * myFavouriteFoods.length);
-console.log(myFavouriteFoods[randomNumber]);
+for (i = 0; i < myFavouriteFoods.length; i++) {
+    console.log(myFavouriteFoods[i]);
+}
