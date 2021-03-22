@@ -28,7 +28,7 @@ recipe = {
 console.log('INGREDIENTS');
 for(i=0; i < recipe.ingredients.length; i++) {
     console.log(`Ingredient ${i+1} is ${recipe.ingredients[i]}`);
-}
+};
 
 console.log('');
 
@@ -36,4 +36,4 @@ console.log('');
 console.log('DIRECTIONS');
 for(i=0; i < recipe.directions.length; i++) {
     console.log(recipe.directions[i]);
-}
+};
