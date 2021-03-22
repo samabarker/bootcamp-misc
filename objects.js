@@ -17,7 +17,7 @@
 
 // TASKS
 // ---------------------------------------------------------------------------------------
-recipe = {
+let recipe = {
     recipeTitle: 'Lasagna',
     servings: '4',
     ingredients: ['Lasagna Sheets', 'Tomato Sauce', 'Cheese', 'Mince'],
