@@ -22,13 +22,13 @@ var shoppingCart=[
 
 let getTotalPrice = (shoppingCart) => {
     let totalPrice = 0;
-    for (item of shoppingCart) {
+    for (let item of shoppingCart) {
         totalPrice += (item.price * item.quantity);
     }
     return totalPrice.toFixed(2);
 }
 
-console.log("TASK 1")
+console.log("TASK 1");
 console.log(getTotalPrice(shoppingCart));
 console.log("");
 
@@ -47,15 +47,15 @@ console.log("");
 
 let getTotalPrice2 = (shoppingCart, discount) => {
     let totalPrice = 0;
-    for (item of shoppingCart) {
-        totalPrice += (item.type === "food") ? (item.price * item.quantity * (100 - discount) * 0.01) :  (item.price * item.quantity);
+    for (let item of shoppingCart) {
+        totalPrice += (item.type === "food") ? (item.price * item.quantity * (100 - discount) * 0.01) : (item.price * item.quantity);
         }
     return totalPrice.toFixed(2);
 }
 
-console.log("TASK 2")
+console.log("TASK 2");
 console.log(getTotalPrice2(shoppingCart,20));
-console.log("")
+console.log("");
 
 
 // TASK 3
@@ -72,15 +72,39 @@ console.log("")
 
 let getTotalPrice3 = (shoppingCart, discount, type) => {
     let totalPrice = 0;
-    for (item of shoppingCart) {
-        totalPrice += (item.type === type || type === "all") ? (item.price * item.quantity * (100 - discount) * 0.01) : (item.price * item.quantity);
+    for (let item of shoppingCart) {
+        totalPrice += (item.type === type || type === "any") ? (item.price * item.quantity * (100 - discount) * 0.01) : (item.price * item.quantity);
         }
     return totalPrice.toFixed(2);
 }
 
-console.log("TASK 3")
+console.log("TASK 3");
 console.log(getTotalPrice3(shoppingCart, 20, "food"));
 console.log(getTotalPrice3(shoppingCart, 20, "alcohol"));
 console.log(getTotalPrice3(shoppingCart, 20, "home"));
-console.log(getTotalPrice3(shoppingCart, 20, "all"));
-console.log("")
+console.log(getTotalPrice3(shoppingCart, 20, "any"));
+console.log("");
+
+
+// TASK 3a
+// ------------------------------------------------------------
+// CREATE FUNCION take arg shoppingCart, highPrice, lowPrice
+    //CREATE ARRAY arrItems
+    //LOOP through item
+        //IF item price geater than or equal lowPrice AND item price lower than or equal to highPrice
+            //THEN push item to arrItems
+    //RETURN ARRAY arrItems
+
+    let filterItems = (shoppingCart, highPrice, lowPrice) => {
+        arrItems = [];
+        for (let item of shoppingCart) {
+            if (item.price <= highPrice && item.price >= lowPrice) {
+                arrItems.push(item);
+            }
+        }
+        return(arrItems);
+    }
+
+    console.log("TASK 3a");
+    console.log(filterItems(shoppingCart,1,0));
+    console.log("");
