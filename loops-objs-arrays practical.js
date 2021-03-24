@@ -133,6 +133,58 @@ const filterItems2 = (shoppingCart, highPrice, lowPrice, quantity) => {
     return(arrItems);
 }
 
-console.log("TASK 3a");
+console.log("TASK 3b");
 console.log(filterItems2(shoppingCart,1,0.2, true));
 console.log("");
+
+
+// TASK 4
+// ------------------------------------------------------------
+let randomNumbers = [3, 6, 1, 68, 23, 15, 3, 9, 56, 10];
+
+const calculateMean = (arr) => {
+    let total = 0;
+    for (let number in arr) {
+        total += arr[number];
+    }
+    return (total / arr.length);
+}
+
+const calculateMode = (arr) => {
+    let nums = [];
+    let count = [];
+
+    for (number1 in arr) {
+        let current_num = arr[number1]
+        let current_count = 0
+        for (number2 in arr) {
+            if (arr[number2] === current_num) {
+                current_count +=1
+            }
+        }
+        if (!nums.includes(current_num)) {
+            nums.push(current_num);
+            count.push(current_count);
+        }
+    }
+
+    let max_num = 0;
+    let max_count = 0;
+    for (i=0; i<nums.length; i++) {
+        if (count[i] > max_count) {
+            max_num = nums[i];
+            max_count = count[i];
+        }
+    }
+    return max_num;
+}
+
+const calculateMedian = (arr) => {
+    let sortedArr = arr.sort(function(a, b){return a - b});
+    return sortedArr[(Math.round(sortedArr.length / 2))];
+}
+
+
+console.log(calculateMean(randomNumbers));
+console.log(calculateMode(randomNumbers));
+console.log(calculateMedian(randomNumbers));
