@@ -155,8 +155,8 @@ const calculateMode = (arr) => {
     let count = [];
 
     for (let number1 in arr) {
-        let current_num = arr[number1]
-        let current_count = 0
+        let current_num = arr[number1];
+        let current_count = 0;
         for (let number2 in arr) {
             if (arr[number2] === current_num) {
                 current_count +=1;
