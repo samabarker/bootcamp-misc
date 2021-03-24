@@ -125,10 +125,7 @@ const filterItems = (shoppingCart, highPrice, lowPrice) => {
 const filterItems2 = (shoppingCart, highPrice, lowPrice, quantity) => {
     arrItems = [];
     for (let item of shoppingCart) {
-        let multiplier = 1;
-        if (quantity) {
-            multiplier = item.quantity;
-        }
+        let multiplier = quantity ? item.quantity : 1;
         if (item.price * multiplier <= highPrice && item.price * multiplier >= lowPrice) {
             arrItems.push(item);
         }
@@ -137,5 +134,5 @@ const filterItems2 = (shoppingCart, highPrice, lowPrice, quantity) => {
 }
 
 console.log("TASK 3a");
-console.log(filterItems2(shoppingCart,1,0.2, false));
+console.log(filterItems2(shoppingCart,1,0.2, true));
 console.log("");
