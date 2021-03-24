@@ -154,12 +154,12 @@ const calculateMode = (arr) => {
     let nums = [];
     let count = [];
 
-    for (number1 in arr) {
+    for (let number1 in arr) {
         let current_num = arr[number1]
         let current_count = 0
-        for (number2 in arr) {
+        for (let number2 in arr) {
             if (arr[number2] === current_num) {
-                current_count +=1
+                current_count +=1;
             }
         }
         if (!nums.includes(current_num)) {
@@ -170,7 +170,7 @@ const calculateMode = (arr) => {
 
     let max_num = 0;
     let max_count = 0;
-    for (i=0; i<nums.length; i++) {
+    for (let i=0; i<nums.length; i++) {
         if (count[i] > max_count) {
             max_num = nums[i];
             max_count = count[i];
@@ -187,7 +187,31 @@ const calculateMedian = (arr) => {
     return sortedArr[(Math.floor(sortedArr.length / 2))];
 }
 
-
+console.log("TASK 4")
 console.log(calculateMean(randomNumbers));
 console.log(calculateMode(randomNumbers));
 console.log(calculateMedian(randomNumbers));
+console.log("")
+
+
+// TASK 4a
+// ------------------------------------------------------------
+
+const getAverage = (arr, type) => {
+    switch (type) {
+        case 'mean':
+            return calculateMean(arr);
+        case 'mode':
+            return calculateMode(arr);
+        case 'median':
+            return calculateMedian(arr);
+        default:
+            return 'Incorrectly specified'
+    };
+}
+
+console.log("TASK 4a")
+console.log(getAverage(randomNumbers, 'mean'));
+console.log(getAverage(randomNumbers, 'mode'));
+console.log(getAverage(randomNumbers, 'median'));
+console.log(getAverage(randomNumbers, 'avg'));
