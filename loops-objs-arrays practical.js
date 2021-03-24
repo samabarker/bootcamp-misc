@@ -181,7 +181,10 @@ const calculateMode = (arr) => {
 
 const calculateMedian = (arr) => {
     let sortedArr = arr.sort(function(a, b){return a - b});
-    return sortedArr[(Math.round(sortedArr.length / 2))];
+    if (sortedArr.length % 2 === 0){
+        return ((sortedArr[sortedArr.length / 2]) + (sortedArr[1 + sortedArr.length / 2])) / 2;
+    } 
+    return sortedArr[(Math.floor(sortedArr.length / 2))];
 }
 
 
