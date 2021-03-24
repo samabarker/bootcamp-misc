@@ -20,7 +20,7 @@ var shoppingCart=[
     //  Add (price * quantity) to VAR totalPrice
 //RETURN VAR totalPrice
 
-let getTotalPrice = (shoppingCart) => {
+const getTotalPrice = (shoppingCart) => {
     let totalPrice = 0;
     for (let item of shoppingCart) {
         totalPrice += (item.price * item.quantity);
@@ -45,7 +45,7 @@ console.log("");
             // THEN ADD item price * item quantity to VAR totalPrice
     //RETURN var totalPrice
 
-let getTotalPrice2 = (shoppingCart, discount) => {
+const getTotalPrice2 = (shoppingCart, discount) => {
     let totalPrice = 0;
     for (let item of shoppingCart) {
         totalPrice += (item.type === "food") ? (item.price * item.quantity * (100 - discount) * 0.01) : (item.price * item.quantity);
@@ -70,7 +70,7 @@ console.log("");
             // THEN ADD item price * item quantity to VAR totalPrice
     //RETURN var totalPrice
 
-let getTotalPrice3 = (shoppingCart, discount, type) => {
+const getTotalPrice3 = (shoppingCart, discount, type) => {
     let totalPrice = 0;
     for (let item of shoppingCart) {
         totalPrice += (item.type === type || type === "any") ? (item.price * item.quantity * (100 - discount) * 0.01) : (item.price * item.quantity);
@@ -95,16 +95,47 @@ console.log("");
             //THEN push item to arrItems
     //RETURN ARRAY arrItems
 
-    let filterItems = (shoppingCart, highPrice, lowPrice) => {
-        arrItems = [];
-        for (let item of shoppingCart) {
-            if (item.price <= highPrice && item.price >= lowPrice) {
-                arrItems.push(item);
-            }
+const filterItems = (shoppingCart, highPrice, lowPrice) => {
+    arrItems = [];
+    for (let item of shoppingCart) {
+        if (item.price <= highPrice && item.price >= lowPrice) {
+            arrItems.push(item);
         }
-        return(arrItems);
     }
+    return(arrItems);
+}
 
     console.log("TASK 3a");
-    console.log(filterItems(shoppingCart,1,0));
+    console.log(filterItems(shoppingCart,1,0.2));
     console.log("");
+
+
+    // TASK 3b
+// ------------------------------------------------------------
+// CREATE FUNCION take arg shoppingCart, highPrice, lowPrice, quantity
+    //CREATE ARRAY arrItems
+    //LOOP through item
+    //CREATE VAR multiplier
+        //IF quantity true
+            //THEN let multiplier equal number of items
+        //IF (item price * multiplier) geater than or equal lowPrice AND (item price * multiplier) lower than or equal to highPrice
+            //THEN push item to arrItems
+    //RETURN ARRAY arrItems
+
+const filterItems2 = (shoppingCart, highPrice, lowPrice, quantity) => {
+    arrItems = [];
+    for (let item of shoppingCart) {
+        let multiplier = 1;
+        if (quantity) {
+            multiplier = item.quantity;
+        }
+        if (item.price * multiplier <= highPrice && item.price * multiplier >= lowPrice) {
+            arrItems.push(item);
+        }
+    }
+    return(arrItems);
+}
+
+console.log("TASK 3a");
+console.log(filterItems2(shoppingCart,1,0.2, false));
+console.log("");
