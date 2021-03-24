@@ -110,12 +110,12 @@ const filterItems = (shoppingCart, highPrice, lowPrice) => {
     console.log("");
 
 
-    // TASK 3b
+// TASK 3b
 // ------------------------------------------------------------
 // CREATE FUNCION take arg shoppingCart, highPrice, lowPrice, quantity
     //CREATE ARRAY arrItems
     //LOOP through item
-    //CREATE VAR multiplier
+        //CREATE VAR multiplier
         //IF quantity true
             //THEN let multiplier equal number of items
         //IF (item price * multiplier) geater than or equal lowPrice AND (item price * multiplier) lower than or equal to highPrice
