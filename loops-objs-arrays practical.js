@@ -196,7 +196,6 @@ console.log("")
 
 // TASK 4a
 // ------------------------------------------------------------
-
 const getAverage = (arr, type) => {
     switch (type) {
         case 'mean':
